@@ -1,137 +1,47 @@
 provider "google" {
-    credentials = "${file("/Users/omar/Downloads/reverseproxy-c769275b50ba.json")}"
-    project = "reverseproxy-175718"
-    region = "us-west1"
+    credentials = "${file("/Users/omar/Downloads/gke-terraform-fabaee7395c6.json")}"
+    project = "gke-terraform"
+    region = "europe-west3"
 }
 
-resource "google_compute_instance" "proxy" {
-    name = "test"
-    machine_type = "f1-micro"
-    zone = "us-west1-a"
+resource "google_container_cluster" "primary" {
+  name               = "marcellus-wallace"
+  zone               = "europe-west3-a"
+  initial_node_count = 2
 
-   tags = ["http-load"]
+  additional_zones = [
+    "europe-west3-b",
+    "europe-west3-c",
+  ]
 
-   disk {
-     image = "projects/debian-cloud/global/images/family/debian-8"
-   }
+  master_auth {
+    username = "omar"
+    password = "gatoperro"
+  }
 
-   network_interface {
-     network = "default"
-
-     access_config {
-       // Ephemeral IP
-     }
-   }
-
-   provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y nginx",
+  node_config {
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/compute",
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring",
     ]
-    connection {
-      type     = "ssh"
-      user     = "omarlopez"
+
+    labels {
+      foo = "bar"
     }
+
+    tags = ["foo", "bar"]
   }
 }
 
-resource "google_compute_instance_group" "proxy-resources" {
-  name = "proxy-resources"
-  zone = "us-west1-a"
+resource "null_resource" "get_cluster_credentials" {
 
-  instances = ["${google_compute_instance.proxy.self_link}"]
-
-  named_port {
-    name = "http"
-    port = "80"
-  }
-}
-
-resource "google_compute_health_check" "health-check" {
-  name = "health-check"
-
-  http_health_check {
-  }
-}
-
-resource "google_compute_backend_service" "proxy-service" {
-  name = "proxy-service"
-  protocol = "HTTP"
-
-  backend {
-    group = "${google_compute_instance_group.proxy-resources.self_link}"
-    balancing_mode = "frequency"
-    max_rate_per_instance = 120
+  triggers = {
+     google_cluester="${google_container_cluster.primary.id}"
   }
 
-  health_checks = ["${google_compute_health_check.health-check.self_link}"]
-}
-
-
-resource "google_compute_url_map" "web-map" {
-  name = "web-map"
-  default_service = "${google_compute_backend_service.proxy-service.self_link}"
-
-  host_rule {
-    hosts = ["*"]
-    path_matcher = "allpaths"
-  }
-
-  path_matcher {
-    name = "allpaths"
-    default_service = "${google_compute_backend_service.proxy-service.self_link}"
+  provisioner "local-exec" {
+    command = "gcloud config set project gke-terraform && gcloud config set compute/zone europe-west3-a && gcloud container clusters get-credentials marcellus-wallace"
   }
 }
-
-//openssl req  -nodes -new -x509  -keyout server.key -out server.cert
-
-resource "google_compute_ssl_certificate" "proxy-cert" {
-  name        = "proxy-cert"
-  description = "description"
-  private_key = "${file("../server.key")}"
-  certificate = "${file("../server.cert")}"
-}
-
-resource "google_compute_target_https_proxy" "https-lb-proxy" {
-  name             = "test-proxy"
-  description      = "a description"
-  url_map = "${google_compute_url_map.web-map.self_link}"
-  ssl_certificates = ["${google_compute_ssl_certificate.proxy-cert.self_link}"]
-}
-
-resource "google_compute_target_http_proxy" "http-lb-proxy" {
-  name = "http-lb-proxy"
-  url_map = "${google_compute_url_map.web-map.self_link}"
-}
-
-resource "google_compute_global_address" "external-address" {
-  name = "external-address"
-}
-
-resource "google_compute_global_forwarding_rule" "http" {
-  name = "http-content-gfr"
-  target = "${google_compute_target_http_proxy.http-lb-proxy.self_link}"
-  ip_address = "${google_compute_global_address.external-address.address}"
-  port_range = "80"
-}
-
-resource "google_compute_global_forwarding_rule" "https" {
-  name = "https-content-gfr"
-  target = "${google_compute_target_https_proxy.https-lb-proxy.self_link}"
-  ip_address = "${google_compute_global_address.external-address.address}"
-  port_range = "443"
-}
-
-resource "google_compute_firewall" "default" {
-  name = "wwww-firewall-allow-internal-only"
-  network = "default"
-
-  allow {
-    protocol = "tcp"
-    ports = ["80"]
-  }
-
-  source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
-  target_tags = ["http-load"]
-}
-
