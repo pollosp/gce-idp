@@ -1,22 +1,34 @@
+# Set the variable value in *.tfvars file
+# or using -var="google_credentials_file=..." CLI option
+variable "google_credentials_file" {}
+variable "google_project" {}
+variable "google_region" {}
+variable "cluster_name" {}
+variable "cluster_zone" {}
+variable "cluster_additional_zone1" {}
+variable "cluster_additional_zone2" {}
+variable "master_username" {}
+variable "master_password" {}
+
 provider "google" {
-    credentials = "${file("/Users/omar/Downloads/gke-terraform-fabaee7395c6.json")}"
-    project = "gke-terraform"
-    region = "europe-west3"
+    credentials = "${file("${var.google_credentials_file}")}"
+    project = "${var.google_project}"
+    region = "${var.google_region}"
 }
 
 resource "google_container_cluster" "primary" {
-  name               = "marcellus-wallace"
-  zone               = "europe-west3-a"
+  name               = "${var.cluster_name}"
+  zone               = "${var.cluster_zone}"
   initial_node_count = 2
 
   additional_zones = [
-    "europe-west3-b",
-    "europe-west3-c",
+    "${var.cluster_additional_zone1}",
+    "${var.cluster_additional_zone2}",
   ]
 
   master_auth {
-    username = "omar"
-    password = "gatoperro"
+    username = "${var.master_username}"
+    password = "${var.master_password}"
   }
 
   node_config {
@@ -38,10 +50,10 @@ resource "google_container_cluster" "primary" {
 resource "null_resource" "get_cluster_credentials" {
 
   triggers = {
-     google_cluester="${google_container_cluster.primary.id}"
+     google_cluster="${google_container_cluster.primary.id}"
   }
 
   provisioner "local-exec" {
-    command = "gcloud config set project gke-terraform && gcloud config set compute/zone europe-west3-a && gcloud container clusters get-credentials marcellus-wallace"
+    command = "gcloud config set project gke-terraform && gcloud config set compute/zone europe-west3-a && gcloud container clusters get-credentials ${var.cluster_name}"
   }
 }

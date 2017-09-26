@@ -1,8 +1,11 @@
+variable "nginx_version" {}
+
 provider "kubernetes" {
   host     = "https://${google_container_cluster.primary.endpoint}"
-  username = "omar"
-  password = "gatoperro"
+  username = "${var.master_username}"
+  password = "${var.master_password}"
 }
+
 
 resource "kubernetes_service" "example" {
   depends_on = ["null_resource.get_cluster_credentials"]
@@ -34,7 +37,7 @@ resource "kubernetes_pod" "example" {
 
   spec {
     container {
-      image = "nginx:1.7.9"
+      image = "${var.nginx_version}"
       name  = "example"
     }
   }

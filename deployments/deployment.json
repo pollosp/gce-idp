@@ -1,0 +1,42 @@
+{
+   "apiVersion": "apps/v1beta1",
+   "kind": "Deployment",
+   "metadata": {
+      "name": "nginx",
+      "namespace": "Ardilla"
+   },
+   "spec": {
+      "replicas": 10,
+      "template": {
+         "metadata": {
+            "labels": {
+               "app": "nginx"
+            }
+         },
+         "spec": {
+            "containers": [
+               {
+                  "env": [
+                     {
+                        "name": "VAR1",
+                        "value": "wwww"
+                     },
+                     {
+                        "name": "VAR2",
+                        "value": "perrra"
+                     }
+                  ],
+                  "image": "nginx:14",
+                  "name": "nginx",
+                  "ports": [
+                     {
+                        "containerPort": 80,
+                        "name": "http"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
