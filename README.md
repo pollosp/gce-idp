@@ -15,3 +15,9 @@ export GKE_ADDITIONAL_ZONE2="europe-west3-c"
 export GKE_USER="jose"
 export GKE_PASSWORD="Hello123"
 ```
+
+# Port Forward
+`kubectl port-forward kubernetes-dashboard-1914926742-x8fsc 9090:9090 -n kube-system`
+
+# KSONNET COMMANDS
+`$ksonnet\>` `jsonnet --ext-str replicas=20 --ext-str port=2368 --ext-str enviroment=prod example.jsonnet > deploymet.json`
