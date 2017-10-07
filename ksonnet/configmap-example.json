@@ -1,0 +1,23 @@
+local k = import "../../ksonnet-lib/ksonnet.beta.2/k.libsonnet";
+local configMap = k.core.v1.configMap;
+
+local conf = {
+    namespace: "example-namespace",
+    configName: {
+        name: "example-config-cm",
+    },
+    labels: {
+        label1: "test-label",
+    },
+};
+
+
+configMap.new() +
+    configMap.mixin.metadata.name(conf.configName.name) +
+    configMap.mixin.metadata.namespace(conf.namespace) +
+    configMap.mixin.metadata.labels(conf.labels) +
+    configMap.data({"config.json": "xxx"})
+
+//k.core.v1.list.new([
+//    testConfig,
+//])
