@@ -54,6 +54,6 @@ resource "null_resource" "get_cluster_credentials" {
   }
 
   provisioner "local-exec" {
-    command = "gcloud config set project gke-terraform && gcloud config set compute/zone europe-west3-a && gcloud container clusters get-credentials ${var.cluster_name}"
+    command = "sleep 120 && gcloud config set project gke-terraform && gcloud config set compute/zone europe-west3-a && gcloud container clusters get-credentials ${var.cluster_name}"
   }
 }
