@@ -1,9 +1,10 @@
 ---
-# TERRAFORM GKE and KSONNET BEST FRIENDS
+# TERRAFORM GKE and KSONNET 
+## BEST FRIENDS
 ---
 ## ABOUT ME
 
-* I'm new in the city so this is my first talk in Krakow and first in english too
+* I'm new in the city so this is my first talk in Krakow and first in English too
 * I work with the Flywire engineering team in Valencia (Spain) as SRE
 * Flywire is a crossborder payment platform (http://www.flywire.com)
 * We have been playing with Kubernetes for at least 9 months
