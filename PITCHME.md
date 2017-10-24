@@ -1,11 +1,11 @@
 ---
-# TERRAFROM GKE and KSONNET BEST FRIENDS
+# TERRAFORM GKE and KSONNET BEST FRIENDS
 ---
 ## ABOUT ME
 
-I'm new in the city so this is my first talk in krakow and in english
-I work remotely with the Flywire engeneering team in Valencia (Spain) as SRE 
-We have been playing with Kubernetes for at leat 9 month
+* I'm new in the city so this is my first talk in krakow and in english
+* I work remotely with the Flywire engeneering team in Valencia (Spain) as SRE 
+* We have been playing with Kubernetes for at leat 9 month
 ---
 ## AGENDA
 
@@ -19,16 +19,16 @@ Estimated time 30 minutes + questions
 Google Container Engine is a managed environment for deploying containerized applications. 
 (https://cloud.google.com/container-engine/)
 
-Anyone is familiar with GKE and GCE? 
+Is anyone familiar with GKE and GCE? 
 ---
 ## TERRAFORM
 
 Terraform is an infrastructure as code software by HashiCorp. It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
-Anyone is familiar with Terraform? 
+Is anyone familiar with Terraform? 
 ---
-### PROVIDERS
+### TERRAFORM PROVIDERS
 
 Terraform is used to create, manage, and manipulate infrastructure resources.
 Examples of resources include physical machines, VMs, network switches, containers, etc. 
@@ -45,8 +45,8 @@ provider "google" {
 }
 ```
 ---
-### RESOURCES
----
+### TERRAFORM RESOURCES
+
 The most important thing you'll configure with Terraform are resources.
 Resources are a component of your infrastructure. 
 It might be some low level component such as a physical server, virtual machine, or container. 
@@ -67,7 +67,7 @@ resource "google_compute_disk" "default" {
 }
 ```
 ---
-### OTHER CONFIG ITEMS
+### OTHER TERRAFORM CONFIG ITEMS
 
 * Modules
 * Data
@@ -75,13 +75,14 @@ resource "google_compute_disk" "default" {
 * Local Values
 * Output
 * Environment Variables
-* ETC
+
 ---
 ## KSONET 
 
 A Jsonnet library that compiles to Kubernetes YAML
 (http://ksonnet.heptio.com/)
-Anyone is familiar with KSONNET? 
+
+Is anyone familiar with KSONNET? 
 ---
 ### JSONNET 
 
