@@ -99,11 +99,11 @@ image
 (http://jsonnet.org/)
 ---
 ### JSONNET EXAMPLE
-![alt jsonnet_example](https://github.com/pollosp/gke/images/jsonnet.png "JSONNET EXAMPLE")
+![alt jsonnet_example](https://github.com/pollosp/gke/raw/master/images/jsonnet.png "JSONNET EXAMPLE")
 ---
 
 ### KSONET EXAMPLE
-![alt ksonnet_example](https://github.com/pollosp/gke/images/ksonnet.png "KSONNET EXAMPLE")
+![alt ksonnet_example](https://github.com/pollosp/gke/raw/master/images/ksonnet.png "KSONNET EXAMPLE")
 ---
 ## SHOW ME THE CODE (DEMO)
 ---
