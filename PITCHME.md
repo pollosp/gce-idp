@@ -3,14 +3,14 @@
 ---
 ## ABOUT ME
 
-* I'm new in the city so this is my first talk in krakow and first in english
-* I work remotely with the Flywire engeneering team in Valencia (Spain) as SRE
+* I'm new in the city so this is my first talk in Krakow and first in english too
+* I work with the Flywire engineering team in Valencia (Spain) as SRE
 * Flywire is a crossborder payment platform (http://www.flywire.com)
-* We have been playing with Kubernetes for at leat 9 month
+* We have been playing with Kubernetes for at least 9 months
 ---
-## TALK OBJECTIVES
-Show how we can use GKE, Terraform and KSONNET to manage our kubernetes cluester infrastructure as a code
-Show can we have multiple kubernetes enviroments with only one repo
+## TODAY'S OBJECTIVES
+Show how we can use GKE, Terraform and KSONNET to manage our Kubernetes cluster infrastructure using code
+Show how we can create multiple Kubernetes enviroments with only one repo
 
 ---
 ## AGENDA
@@ -26,7 +26,7 @@ Estimated time 30 minutes + questions
 Google Container Engine is a managed environment for deploying containerized applications. 
 (https://cloud.google.com/container-engine/)
 
-Is anyone using with GKE or Kubernetes?
+Is anyone using GKE or Kubernetes?
 ---
 ## TERRAFORM
 
@@ -93,7 +93,7 @@ Is anyone using KSONNET?
 ---
 ### JSONNET 
 
-Jsonnet is a domain specific configuration language that helps you define JSON data. 
+Jsonnet is a DSL that helps you define JSON data. 
 Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text. 
 image
 (http://jsonnet.org/)
@@ -102,7 +102,7 @@ image
 ![alt jsonnet_example](https://github.com/pollosp/gke/raw/master/images/jsonnet.png "JSONNET EXAMPLE")
 ---
 
-### KSONET EXAMPLE
+### KSONNET EXAMPLE
 ![alt ksonnet_example](https://github.com/pollosp/gke/raw/master/images/ksonnet.png "KSONNET EXAMPLE")
 ---
 ## SHOW ME THE CODE (DEMO)
@@ -113,4 +113,6 @@ image
 ---
 ### KUBERNETES with KSONET
 ---
-### QUESTIONS?
+## QUESTIONS?
+---
+## THANKS
