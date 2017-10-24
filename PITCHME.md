@@ -3,15 +3,22 @@
 ---
 ## ABOUT ME
 
-* I'm new in the city so this is my first talk in krakow and in english
-* I work remotely with the Flywire engeneering team in Valencia (Spain) as SRE 
+* I'm new in the city so this is my first talk in krakow and first in english
+* I work remotely with the Flywire engeneering team in Valencia (Spain) as SRE
+* Flywire is a crossborder payment platform (http://www.flywire.com)
 * We have been playing with Kubernetes for at leat 9 month
+---
+## TALK OBJECTIVES
+Show how we can use GKE, Terraform and KSONNET to manage our kubernetes cluester infrastructure as a code
+Show can we have multiple kubernetes enviroments with only one repo
+
 ---
 ## AGENDA
 
-* Fast review of GKE, Terraform and KSONNET 
-* Code review 
-* Fast demo 
+* Fast review of GKE, Terraform and KSONNET
+* Code review
+* Fast demo
+
 Estimated time 30 minutes + questions 
 ---
 ## GKE
@@ -19,14 +26,14 @@ Estimated time 30 minutes + questions
 Google Container Engine is a managed environment for deploying containerized applications. 
 (https://cloud.google.com/container-engine/)
 
-Is anyone familiar with GKE and GCE? 
+Is anyone using with GKE or Kubernetes?
 ---
 ## TERRAFORM
 
 Terraform is an infrastructure as code software by HashiCorp. It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
-Is anyone familiar with Terraform? 
+Is anyone using Terraform?
 ---
 ### TERRAFORM PROVIDERS
 
@@ -82,7 +89,7 @@ resource "google_compute_disk" "default" {
 A Jsonnet library that compiles to Kubernetes YAML
 (http://ksonnet.heptio.com/)
 
-Is anyone familiar with KSONNET? 
+Is anyone using KSONNET? 
 ---
 ### JSONNET 
 
@@ -90,6 +97,13 @@ Jsonnet is a domain specific configuration language that helps you define JSON d
 Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text. 
 image
 (http://jsonnet.org/)
+---
+### JSONNET EXAMPLE
+![alt jsonnet_example](https://github.com/pollosp/gke/images/jsonnet.png "JSONNET EXAMPLE")
+---
+
+### KSONET EXAMPLE
+![alt ksonnet_example](https://github.com/pollosp/gke/images/ksonnet.png "KSONNET EXAMPLE")
 ---
 ## SHOW ME THE CODE (DEMO)
 ---
