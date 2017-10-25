@@ -1,5 +1,6 @@
 .terraform
 terraform.tfstate
+.DS_Store
 terraform.tfstate.backup
 terraform.tfstate*
 .tool-versions
