@@ -1,6 +1,6 @@
 ---
-# TERRAFORM GKE 
-# and KSONNET 
+# TERRAFORM GKE
+# and KSONNET
 ## BEST FRIENDS
 ---
 ## ABOUT ME
@@ -21,11 +21,25 @@ Show how we can create multiple Kubernetes enviroments with only one repo
 * Code review
 * Fast demo
 
-Estimated time 30 minutes + questions 
+Estimated time 30 minutes + questions
+---
+## KUBERNETES
+
+Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
+(https://en.wikipedia.org/wiki/Kubernetes)
+
+---
+## KUBERNETES BASIC OBJECTS
+
+* Deployment
+* Service
+* ConfigMap
+* Secret
+
 ---
 ## GKE
 
-Google Container Engine is a managed environment for deploying containerized applications. 
+Google Container Engine is a managed environment for deploying containerized applications.
 (https://cloud.google.com/container-engine/)
 
 Is anyone using GKE or Kubernetes?
@@ -40,7 +54,7 @@ Is anyone using Terraform?
 ### TERRAFORM PROVIDERS
 
 Terraform is used to create, manage, and manipulate infrastructure resources.
-Examples of resources include physical machines, VMs, network switches, containers, etc. 
+Examples of resources include physical machines, VMs, network switches, containers, etc.
 Almost any infrastructure noun can be represented as a resource in Terraform.
 (https://www.terraform.io/docs/providers/index.html)
 ---
@@ -57,8 +71,8 @@ provider "google" {
 ### TERRAFORM RESOURCES
 
 The most important thing you'll configure with Terraform are resources.
-Resources are a component of your infrastructure. 
-It might be some low level component such as a physical server, virtual machine, or container. 
+Resources are a component of your infrastructure.
+It might be some low level component such as a physical server, virtual machine, or container.
 Or it can be a higher level component such as an email provider, DNS record, or database provider.
 (https://www.terraform.io/docs/configuration/resources.html)
 ---
@@ -86,17 +100,17 @@ resource "google_compute_disk" "default" {
 * Environment Variables
 
 ---
-## KSONET 
+## KSONET
 
 A Jsonnet library that compiles to Kubernetes YAML
 (http://ksonnet.heptio.com/)
 
-Is anyone using KSONNET? 
+Is anyone using KSONNET?
 ---
-### JSONNET 
+### JSONNET
 
-Jsonnet is a DSL that helps you define JSON data. 
-Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text. 
+Jsonnet is a DSL that helps you define JSON data.
+Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text.
 image
 (http://jsonnet.org/)
 ---
