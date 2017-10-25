@@ -22,11 +22,13 @@ Show how we can create multiple Kubernetes enviroments with only one repo
 * Fast demo
 
 Estimated time 30 minutes + questions
+
 ---
 ## KUBERNETES
 
 Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
 (https://en.wikipedia.org/wiki/Kubernetes)
+
 ---
 
 ## KUBERNETES OVERVIEW
@@ -47,6 +49,7 @@ Google Container Engine is a managed environment for deploying containerized app
 (https://cloud.google.com/container-engine/)
 
 Is anyone using GKE or Kubernetes?
+
 ---
 ## TERRAFORM
 
@@ -54,6 +57,7 @@ Terraform is an infrastructure as code software by HashiCorp. It allows users to
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
 Is anyone using Terraform?
+
 ---
 ### TERRAFORM PROVIDERS
 
@@ -61,6 +65,7 @@ Terraform is used to create, manage, and manipulate infrastructure resources.
 Examples of resources include physical machines, VMs, network switches, containers, etc.
 Almost any infrastructure noun can be represented as a resource in Terraform.
 (https://www.terraform.io/docs/providers/index.html)
+
 ---
 Example:
 
@@ -79,6 +84,7 @@ Resources are a component of your infrastructure.
 It might be some low level component such as a physical server, virtual machine, or container.
 Or it can be a higher level component such as an email provider, DNS record, or database provider.
 (https://www.terraform.io/docs/configuration/resources.html)
+
 ---
 Example:
 
@@ -110,6 +116,7 @@ A Jsonnet library that compiles to Kubernetes YAML
 (http://ksonnet.heptio.com/)
 
 Is anyone using KSONNET?
+
 ---
 ### JSONNET
 
@@ -117,13 +124,16 @@ Jsonnet is a DSL that helps you define JSON data.
 Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text.
 image
 (http://jsonnet.org/)
+
 ---
 ### JSONNET EXAMPLE
 ![alt jsonnet_example](https://github.com/pollosp/gke/raw/master/images/jsonnet.png "JSONNET EXAMPLE")
+
 ---
 
 ### KSONNET EXAMPLE
 ![alt ksonnet_example](https://github.com/pollosp/gke/raw/master/images/ksonnet.png "KSONNET EXAMPLE")
+
 ---
 ## SHOW ME THE CODE (DEMO)
 ---
