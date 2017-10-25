@@ -11,8 +11,9 @@
 * We have been playing with Kubernetes for at least 9 months
 ---
 ## TODAY'S OBJECTIVES
-Show how we can use GKE, Terraform and KSONNET to manage our Kubernetes cluster infrastructure using code
-Show how we can create multiple Kubernetes enviroments with only one repo
+
+* Show how we can use GKE, Terraform and KSONNET to manage our Kubernetes cluster infrastructure using code
+* Show how we can create multiple Kubernetes enviroments with only one repo
 
 ---
 ## AGENDA
