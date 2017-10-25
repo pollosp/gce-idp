@@ -27,6 +27,10 @@ Estimated time 30 minutes + questions
 
 Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
 (https://en.wikipedia.org/wiki/Kubernetes)
+---
+
+## KUBERNETES OVERVIEW
+![alt kubernetes_schema](https://github.com/pollosp/gke/raw/master/images/kubernetes.png "Kubernetes schema")
 
 ---
 ## KUBERNETES BASIC OBJECTS
