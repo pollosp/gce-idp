@@ -30,6 +30,8 @@ Estimated time 30 minutes + questions
 Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
 (https://en.wikipedia.org/wiki/Kubernetes)
 
+Is anyone using Kubernetes?
+
 ---
 
 ## KUBERNETES OVERVIEW
@@ -49,7 +51,7 @@ Kubernetes is an open-source system for automating deployment, scaling and manag
 Google Container Engine is a managed environment for deploying containerized applications.
 (https://cloud.google.com/container-engine/)
 
-Is anyone using GKE or Kubernetes?
+Is anyone using GKE?
 
 ---
 ## TERRAFORM
