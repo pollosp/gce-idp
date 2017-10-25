@@ -110,7 +110,7 @@ resource "google_compute_disk" "default" {
 * Environment Variables
 
 ---
-## KSONET
+## KSONNET
 
 A Jsonnet library that compiles to Kubernetes YAML
 (http://ksonnet.heptio.com/)
