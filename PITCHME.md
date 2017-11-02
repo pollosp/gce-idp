@@ -25,7 +25,12 @@
 Estimated time 30 minutes + questions
 
 ---
+## CODE
 
+
+![QR](https://github.com/pollosp/gke/raw/master/images/QR.png "QR")
+
+---
 ## GKE
 
 Google Container Engine is a managed environment for deploying containerized applications.
