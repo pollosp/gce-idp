@@ -51,6 +51,10 @@ Is anyone using Kubernetes or interested on it?
 * Environmental consistency across development, testing, and production: Runs the same on a laptop as it does in the cloud
 * Quick and easy rollbacks: just use the previous version of the container
 * Cloud and OS distribution portability: Run Debian containers into RedHat host
+
+---
+
+## AND MORE ABOUT CONTAINERS
 * Application-centric management: Focus your eforts in the app not into the system
 * Resource isolation: One app one container with his libaries
 * Resource utilization: High efficiency and density
@@ -82,13 +86,18 @@ Is anyone using Kubernetes or interested on it?
 ---
 
 ## KUBERNETES OVERVIEW
-![alt kubernetes_schema](https://github.com/pollosp/gke/raw/master/images/kubernetes.png "Kubernetes schema")
 
-* Scheduler/Controller Manager
-* API server
-* Masters/Workers
-* Kubelet
-* ETCD
+* Scheduler/Controller Manager: Workload and resources
+* API server: Interaction with the user
+* Kubelet: Agent
+* ETCD: Persistency/state/database
+* Masters/Workers: Nodes/GCE instances
+
+---
+
+## KUBERNETES OVERVIEW
+
+![alt kubernetes_schema](https://github.com/pollosp/gke/raw/master/images/kubernetes.png "Kubernetes schema")
 
 ---
 ## KUBERNETES BASIC OBJECTS
@@ -102,7 +111,8 @@ Is anyone using Kubernetes or interested on it?
 ---
 ## TERRAFORM
 
-Terraform is an infrastructure as code software by HashiCorp. It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
+Terraform is an infrastructure as code software by HashiCorp.
+It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
 Is anyone using Terraform or interested on it?
