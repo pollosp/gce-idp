@@ -4,15 +4,17 @@
 ---
 ## ABOUT ME
 
-* I'm new in the city so this is my first talk in Krakow and first in English too
-* I work with the Flywire engineering team in Valencia (Spain) as SRE
+* I'm Omar Lopez
+* I'm new in the city so this is my first talk in Krakow and my first in English too
+* I'm working as SRE at Flywire
 * Flywire is a crossborder payment platform (http://www.flywire.com)
 * We have been playing with Kubernetes for at least for 10 months
+
 ---
 ## TODAY'S OBJECTIVES
 
-* Show how we can use GKE and Terraform to manage our Kubernetes
-* Ghost Blog example
+* Show how we can use GKE and Terraform together
+* Run a sample application in GKE
 
 ---
 
@@ -27,8 +29,9 @@ Estimated time 30 minutes + questions
 ---
 ## CODE
 
+![QR](https://github.com/pollosp/gke/raw/simple/images/QR.png "QR")
 
-![QR](https://github.com/pollosp/gke/raw/master/images/QR.png "QR")
+### https://github.com/pollosp/gke/tree/simple
 
 ---
 ## GKE
@@ -92,7 +95,7 @@ Is anyone using Kubernetes or interested on it?
 
 ## KUBERNETES OVERVIEW
 
-* Scheduler/Controller Manager: Workload and resources
+* Scheduler/Controller Manager: Workload and resources mangement
 * API server: Interaction with the user
 * Kubelet: Agent
 * ETCD: Persistency/state/database
