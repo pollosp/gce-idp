@@ -1,7 +1,5 @@
 ---
-# TERRAFORM 
-# AND
-# GKE
+# TERRAFORM AND GKE
 ## BEST FRIENDS
 ---
 ## ABOUT ME
@@ -9,20 +7,20 @@
 * I'm new in the city so this is my first talk in Krakow and first in English too
 * I work with the Flywire engineering team in Valencia (Spain) as SRE
 * Flywire is a crossborder payment platform (http://www.flywire.com)
-* We have been playing with Kubernetes for at least 9 months
+* We have been playing with Kubernetes for at least for 10 months
 ---
 ## TODAY'S OBJECTIVES
 
-* Show how we can use GKE, Terraform to manage our Kubernetes cluster infrastructure using code
-* Show how we can create multiple Kubernetes enviroments with only one repo
+* Show how we can use GKE and Terraform to manage our Kubernetes
+* Ghost Blog example
 
 ---
 
 ## AGENDA
 
-* Fast review of GKE and Terraform
-* Code review
-* Fast demo
+* Quick review of GKE and Terraform
+* Quick code review
+* Demo
 
 Estimated time 30 minutes + questions
 
@@ -33,26 +31,28 @@ Estimated time 30 minutes + questions
 Google Container Engine is a managed environment for deploying containerized applications.
 (https://cloud.google.com/container-engine/)
 
+It uses Kubernetes as engine
+
 Is anyone using GKE or interested on it?
 
 ---
 
 ## KUBERNETES
 
-Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
+Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications
 (https://en.wikipedia.org/wiki/Kubernetes)
 
 Is anyone using Kubernetes or interested on it?
 
---- 
+---
 
 ## WHY CONTAINERS?
 
 * Environmental consistency across development, testing, and production: Runs the same on a laptop as it does in the cloud
-* Quick and easy rollbacks
-* Cloud and OS distribution portability
-* Application-centric management
-* Resource isolation: Predictable application performance
+* Quick and easy rollbacks: just use the previous version of the container
+* Cloud and OS distribution portability: Run Debian containers into RedHat host
+* Application-centric management: Focus your eforts in the app not into the system
+* Resource isolation: One app one container with his libaries
 * Resource utilization: High efficiency and density
 
 (https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
@@ -61,17 +61,17 @@ Is anyone using Kubernetes or interested on it?
 
 ## WHY KUBERNETES?
 
-* Deploy your applications quickly
-* Deploy imutable applications
-* Scale your applications on the fly
-* Roll out new features seamlessly
+* Deploy your applications quickly: Hunders or thoursands of pods at sametime
+* Deploy imutable applications: Read Only containers
+* Scale your applications on the fly: Rescale your app pods
+* Roll out new features seamlessly: Rolling updates, Blue Green stategy, etc
 * Limit hardware usage to required resources only
 
 (https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 
 ---
 
-## AND THERE ARE MORRE REASONS ...  
+## AND THERE ARE MORRE REASONS ...
 
 * Portable: public, private, hybrid, multi-cloud
 * Extensible: modular, pluggable, hookable, composable
@@ -83,6 +83,12 @@ Is anyone using Kubernetes or interested on it?
 
 ## KUBERNETES OVERVIEW
 ![alt kubernetes_schema](https://github.com/pollosp/gke/raw/master/images/kubernetes.png "Kubernetes schema")
+
+* Scheduler/Controller Manager
+* API server
+* Masters/Workers
+* Kubelet
+* ETCD
 
 ---
 ## KUBERNETES BASIC OBJECTS
@@ -104,12 +110,11 @@ Is anyone using Terraform or interested on it?
 ---
 ### TERRAFORM PROVIDERS
 
-Terraform is used to create, manage, and manipulate infrastructure resources.
-Examples of resources include physical machines, VMs, network switches, containers, etc.
-Almost any infrastructure noun can be represented as a resource in Terraform.
+A provider is responsible for understanding API interactions and exposing resources. Providers generally are an IaaS (e.g. AWS, GCP, Microsoft Azure, OpenStack), PaaS (e.g. Heroku), or SaaS services (e.g. Terraform Enterprise, DNSimple, CloudFlare).
 (https://www.terraform.io/docs/providers/index.html)
 
 ---
+
 Example:
 
 ```hcl
@@ -119,14 +124,13 @@ provider "google" {
   region      = "us-central1"
 }
 ```
+
 ---
 
 ### TERRAFORM RESOURCES
 
-The most important thing you'll configure with Terraform are resources.
-Resources are a component of your infrastructure.
-It might be some low level component such as a physical server, virtual machine, or container.
-Or it can be a higher level component such as an email provider, DNS record, or database provider.
+Resources are a components of your infrastructure.
+Like virtual machine, container, email provider, DNS record, or database provider.
 (https://www.terraform.io/docs/configuration/resources.html)
 
 ---
@@ -143,16 +147,17 @@ resource "google_compute_disk" "default" {
   }
 }
 ```
+
 ---
 
 ### OTHER TERRAFORM CONFIG ITEMS
 
-* Modules
-* Data
 * Variables
 * Local Values
 * Output
 * Environment Variables
+* Modules
+* Data
 
 ---
 ## SHOW ME THE CODE (DEMO)
