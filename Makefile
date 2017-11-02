@@ -7,7 +7,7 @@ GKE_ADDITIONAL_ZONE1 ?= europe-west3-b
 GKE_ADDITIONAL_ZONE2 ?= europe-west3-c
 GKE_USER ?= omar
 GKE_PASSWORD ?= Hello123
-NGINX_VERSION ?= nginx:1.7.9
+GHOST_VERSION ?= ghost
 ENVIRONMENT ?= prod
 REPLICAS ?= 10
 
@@ -21,7 +21,7 @@ plan:
 		-var="cluster_additional_zone2=$(GKE_ADDITIONAL_ZONE2)" \
 		-var="master_username=$(GKE_USER)" \
 		-var="master_password=$(GKE_PASSWORD)" \
-		-var="nginx_version=$(NGINX_VERSION)"
+		-var="ghost_version=$(GHOST_VERSION)"
 apply:
 	terraform apply -var="google_credentials_file=$(GOOGLE_CREDENTIALS_FILE)" \
 		-var="google_project=$(GOOGLE_PROJECT)" \
@@ -32,7 +32,7 @@ apply:
 		-var="cluster_additional_zone2=$(GKE_ADDITIONAL_ZONE2)" \
 		-var="master_username=$(GKE_USER)" \
 		-var="master_password=$(GKE_PASSWORD)" \
-		-var="nginx_version=$(NGINX_VERSION)"
+		-var="ghost_version=$(GHOST_VERSION)"
 
 destroy:
 	terraform destroy -var="google_credentials_file=$(GOOGLE_CREDENTIALS_FILE)" \
@@ -44,7 +44,7 @@ destroy:
 		-var="cluster_additional_zone2=$(GKE_ADDITIONAL_ZONE2)" \
 		-var="master_username=$(GKE_USER)" \
 		-var="master_password=$(GKE_PASSWORD)" \
-		-var="nginx_version=$(NGINX_VERSION)"
+		-var="ghost_version=$(GHOST_VERSION)"
 
 get_cluster_credentials:
 	gcloud config set project gke-terraform  \

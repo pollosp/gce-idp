@@ -1,6 +1,7 @@
 ---
-# TERRAFORM GKE
-# and KSONNET
+# TERRAFORM 
+# AND
+# GKE
 ## BEST FRIENDS
 ---
 ## ABOUT ME
@@ -12,25 +13,71 @@
 ---
 ## TODAY'S OBJECTIVES
 
-* Show how we can use GKE, Terraform and KSONNET to manage our Kubernetes cluster infrastructure using code
+* Show how we can use GKE, Terraform to manage our Kubernetes cluster infrastructure using code
 * Show how we can create multiple Kubernetes enviroments with only one repo
 
 ---
+
 ## AGENDA
 
-* Fast review of GKE, Terraform and KSONNET
+* Fast review of GKE and Terraform
 * Code review
 * Fast demo
 
 Estimated time 30 minutes + questions
 
 ---
+
+## GKE
+
+Google Container Engine is a managed environment for deploying containerized applications.
+(https://cloud.google.com/container-engine/)
+
+Is anyone using GKE or interested on it?
+
+---
+
 ## KUBERNETES
 
 Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications that was originally designed by Google and donated to the Cloud Native Computing Foundation.
 (https://en.wikipedia.org/wiki/Kubernetes)
 
-Is anyone using Kubernetes?
+Is anyone using Kubernetes or interested on it?
+
+--- 
+
+## WHY CONTAINERS?
+
+* Environmental consistency across development, testing, and production: Runs the same on a laptop as it does in the cloud
+* Quick and easy rollbacks
+* Cloud and OS distribution portability
+* Application-centric management
+* Resource isolation: Predictable application performance
+* Resource utilization: High efficiency and density
+
+(https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
+
+---
+
+## WHY KUBERNETES?
+
+* Deploy your applications quickly
+* Deploy imutable applications
+* Scale your applications on the fly
+* Roll out new features seamlessly
+* Limit hardware usage to required resources only
+
+(https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
+
+---
+
+## AND THERE ARE MORRE REASONS ...  
+
+* Portable: public, private, hybrid, multi-cloud
+* Extensible: modular, pluggable, hookable, composable
+* Self-healing: auto-placement, auto-restart, auto-replication, auto-scaling
+
+(https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 
 ---
 
@@ -40,18 +87,11 @@ Is anyone using Kubernetes?
 ---
 ## KUBERNETES BASIC OBJECTS
 
-* Deployment
-* Service
+* POD
 * ConfigMap
 * Secret
-
----
-## GKE
-
-Google Container Engine is a managed environment for deploying containerized applications.
-(https://cloud.google.com/container-engine/)
-
-Is anyone using GKE?
+* Service
+* Deployment
 
 ---
 ## TERRAFORM
@@ -59,7 +99,7 @@ Is anyone using GKE?
 Terraform is an infrastructure as code software by HashiCorp. It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
-Is anyone using Terraform?
+Is anyone using Terraform or interested on it?
 
 ---
 ### TERRAFORM PROVIDERS
@@ -80,6 +120,7 @@ provider "google" {
 }
 ```
 ---
+
 ### TERRAFORM RESOURCES
 
 The most important thing you'll configure with Terraform are resources.
@@ -103,6 +144,7 @@ resource "google_compute_disk" "default" {
 }
 ```
 ---
+
 ### OTHER TERRAFORM CONFIG ITEMS
 
 * Modules
@@ -113,38 +155,11 @@ resource "google_compute_disk" "default" {
 * Environment Variables
 
 ---
-## KSONNET
-
-A Jsonnet library that compiles to Kubernetes YAML
-(http://ksonnet.heptio.com/)
-
-Is anyone using KSONNET?
-
----
-### JSONNET
-
-Jsonnet is a DSL that helps you define JSON data.
-Jsonnet lets you compute fragments of JSON within the structure, bringing the same benefit to structured data that templating languages bring to plain text.
-image
-(http://jsonnet.org/)
-
----
-### JSONNET EXAMPLE
-![alt jsonnet_example](https://github.com/pollosp/gke/raw/master/images/jsonnet.png "JSONNET EXAMPLE")
-
----
-
-### KSONNET EXAMPLE
-![alt ksonnet_example](https://github.com/pollosp/gke/raw/master/images/ksonnet.png "KSONNET EXAMPLE")
-
----
 ## SHOW ME THE CODE (DEMO)
 ---
 ### GKE with TERRAFROM
 ---
 ### KUBERNETES with TERRAFORM
----
-### KUBERNETES with KSONET
 ---
 ## QUESTIONS?
 ---
