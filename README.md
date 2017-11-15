@@ -2,7 +2,8 @@
 Handling Gke credentials
 https://deis.com/blog/2016/first-kubernetes-cluster-gke/
 
-# Envieronment variables
+# Environment variables
+
 ```sh
 #!/bin/bash
 export GOOGLE_CREDENTIALS_FILE="/Users/omar/Downloads/gke-terraform-fabaee7395c6.json"

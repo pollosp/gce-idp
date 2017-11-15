@@ -8,7 +8,7 @@
 * I'm new in the city so this is my first talk in Krakow and my first in English too
 * I'm working as SRE at Flywire
 * Flywire is a crossborder payment platform (http://www.flywire.com)
-* We have been playing with Kubernetes for at least for 10 months
+* We have been playing with Kubernetes for at least 10 months
 
 ---
 ## TODAY'S OBJECTIVES
@@ -24,7 +24,7 @@
 * Quick code review
 * Demo
 
-Estimated time 30 minutes + questions
+Estimated time 35 minutes + questions
 
 ---
 ## CODE
@@ -41,7 +41,7 @@ Google Container Engine is a managed environment for deploying containerized app
 
 It uses Kubernetes as engine
 
-Is anyone using GKE or interested on it?
+Is anyone using GKE or interested in it?
 
 ---
 
@@ -50,21 +50,21 @@ Is anyone using GKE or interested on it?
 Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications
 (https://en.wikipedia.org/wiki/Kubernetes)
 
-Is anyone using Kubernetes or interested on it?
+Is anyone using Kubernetes or interested in it?
 
 ---
 
 ## WHY CONTAINERS?
 
-* Environmental consistency across development, testing, and production: Runs the same on a laptop as it does in the cloud
+* Environmental consistency across development, testing and production: Runs the same on a laptop as it does in the cloud
 * Quick and easy rollbacks: just use the previous version of the container
-* Cloud and OS distribution portability: Run Debian containers into RedHat host
+* Cloud and OS distribution portability: Run Debian containers into Red Hat host
 
 ---
 
 ## AND MORE ABOUT CONTAINERS
-* Application-centric management: Focus your eforts in the app not into the system
-* Resource isolation: One app one container with his libaries
+* Application-centric management: Focus your efforts on the app not on the system
+* Resource isolation: One app one container with its libraries
 * Resource utilization: High efficiency and density
 
 (https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
@@ -73,10 +73,10 @@ Is anyone using Kubernetes or interested on it?
 
 ## WHY KUBERNETES?
 
-* Deploy your applications quickly: Hunders or thoursands of pods at sametime
-* Deploy imutable applications: Read Only containers
+* Deploy your applications quickly: Hundreds or thousands of pods at the same time
+* Deploy immutable applications: Read Only containers
 * Scale your applications on the fly: Rescale your app pods
-* Roll out new features seamlessly: Rolling updates, Blue Green stategy, etc
+* Roll out new features seamlessly: Rolling updates, Blue Green strategy, etc.
 * Limit hardware usage to required resources only
 
 (https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
@@ -123,7 +123,7 @@ Terraform is an infrastructure as code software by HashiCorp.
 It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure in a service provider such as AWS
 (https://en.wikipedia.org/wiki/Terraform_(software) )
 
-Is anyone using Terraform or interested on it?
+Is anyone using Terraform or interested in it?
 
 ---
 ### TERRAFORM PROVIDERS
@@ -179,10 +179,6 @@ resource "google_compute_disk" "default" {
 
 ---
 ## SHOW ME THE CODE (DEMO)
----
-### GKE with TERRAFROM
----
-### KUBERNETES with TERRAFORM
 ---
 ## QUESTIONS?
 ---

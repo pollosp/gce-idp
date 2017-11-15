@@ -1,10 +1,10 @@
-variable "ghost_version" {}
+#variable "ghost_version" {}
 
-provider "kubernetes" {
-  host     = "https://${google_container_cluster.primary.endpoint}"
-  username = "${var.master_username}"
-  password = "${var.master_password}"
-}
+#provider "kubernetes" {
+#  host     = "https://${google_container_cluster.primary.endpoint}"
+#  username = "${var.master_username}"
+#  password = "${var.master_password}"
+#}
 
 
 #resource "kubernetes_service" "ghost-service" {
